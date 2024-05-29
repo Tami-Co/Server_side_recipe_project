@@ -1,0 +1,28 @@
+[33m6e89b4a[m[33m ([m[1;36mHEAD[m[33m)[m HEAD@{0}: commit: add validators and auth
+[33m18a8aeb[m HEAD@{1}: commit: changes in deleteRecipe and addRecipe functions
+[33m312448e[m HEAD@{2}: commit: add functions in category controller
+[33m47121a8[m HEAD@{3}: commit: new functions in recipe controller + new validation function in recipe model
+[33me38e7ac[m HEAD@{4}: commit: updates and additions in recipe controller and router and in app page
+[33mafe23f3[m HEAD@{5}: commit: updates in app page and recipe.model page
+[33m601b2d0[m HEAD@{6}: commit: category route
+[33m4f712c9[m HEAD@{7}: commit: category controller
+[33ma4cef3f[m HEAD@{8}: commit: שdditions to app page
+[33m128319d[m HEAD@{9}: commit: recipe route
+[33m69234e6[m HEAD@{10}: commit: recipe controller
+[33mfc8f82c[m HEAD@{11}: commit: recipe and category model
+[33m035baa8[m HEAD@{12}: commit: update in recipe model
+[33m706c105[m HEAD@{13}: commit: Code update of several pages
+[33md8f37e4[m HEAD@{14}: commit: app page
+[33m6739570[m HEAD@{15}: commit: handleErrors middleware
+[33mb259f7f[m HEAD@{16}: commit: auth middleware
+[33m25626d1[m HEAD@{17}: commit: user router
+[33m3835b56[m HEAD@{18}: commit: user controller + token
+[33mc672414[m HEAD@{19}: commit: config-connect to mongo db
+[33m79770c8[m HEAD@{20}: commit: updateCategorySchema
+[33mc2efa63[m HEAD@{21}: checkout: moving from f267d4349842b4ce7198183b9a687571a900408e to c2efa63
+[33mf267d43[m HEAD@{22}: commit: recipeSchema2
+[33mdd84388[m HEAD@{23}: checkout: moving from main to dd84388
+[33m7842f8f[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{24}: commit: categorySchema2
+[33mc2efa63[m HEAD@{25}: commit: categorySchema
+[33mdd84388[m HEAD@{26}: commit: recipeSchema
+[33m7b622fc[m HEAD@{27}: commit (initial): userSchema
