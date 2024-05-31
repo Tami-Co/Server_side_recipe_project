@@ -7,7 +7,7 @@ exports.getAllRecipes = async (req, res, next) => {
     let { search, page, perPage } = req.query;
     search ??= '';
     page ??= 1;
-    perPage ??= 6;
+    perPage ??= 12;
 
     console.log("params", search, perPage, page);
     try {
@@ -78,11 +78,11 @@ exports.addRecipe = async (req, res, next) => {
             for (const category of categories) {
                 const existingCategory = await Category.findOne({ description: category.description });
                 if (!existingCategory) {
-                    const newCategory = new Category({ description: category.description, recipes: [{ nameRecipe: req.body.name, img: req.body.img }] });
+                    const newCategory = new Category({ description: category.description, recipes: [{ name: req.body.name, img: req.body.img }] });
                     await newCategory.save();
                 }
                 else {
-                    existingCategory.recipes.push({ nameRecipe: req.body.name, img: req.body.img })
+                    existingCategory.recipes.push({ name: req.body.name, img: req.body.img })
                     await existingCategory.save();
                 }
             }
@@ -141,7 +141,7 @@ exports.deleteRecipe = async (req, res, next) => {
                     const c = await Category.findOne({ description: category.description });
                     if (c.recipes.length !== 1) {
                         console.log("222", c.recipes.length);
-                        c.recipes = c.recipes.filter(x => x.nameRecipe !== recipe.name);
+                        c.recipes = c.recipes.filter(x => x.name !== recipe.name);
                         c.save();
                     }
                     else {

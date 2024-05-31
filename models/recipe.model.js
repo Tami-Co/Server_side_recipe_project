@@ -24,7 +24,10 @@ const recipeSchema = new mongoose.Schema({
     dateAdded: { type: Date },
     layersCake: [layersCakeSchema],
     instructions: { type: String, require: true },
-    img: { type: String, require: true },
+    img: {
+        type: String,
+        //  require: true 
+    },
     isPrivate: { type: Boolean, require: true },
     user: minimalUserSchema,
 })
@@ -48,7 +51,9 @@ module.exports.recipeValidators = {
             })
         ).required(),
         instructions: Joi.string().required().min(10).max(1000),
-        img: Joi.string().required(),
+        img: Joi.string()
+        // .required()
+        ,
         isPrivate: Joi.bool().required(),
         user: Joi.required(),
     }),

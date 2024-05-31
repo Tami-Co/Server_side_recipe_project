@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // mongooseSequence.initalize(mongoose.connection)
 const minimalRecipeSchema = new mongoose.Schema({
     id: [{ type: mongoose.Types.ObjectId, ref: 'recipes' }],
-    nameRecipe: { type: String },
+    name: { type: String },
     img: { type: String },
 })
 
