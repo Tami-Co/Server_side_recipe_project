@@ -32,6 +32,10 @@ exports.signUp = async (req, res, next) => {
     if (v.error) {
         return next({ message: v.error.message })
     }
+    const emailExist = await User.findOne({ email: email });
+    if (emailExist) {
+        return next({ message: 'The user is exist' })
+    }
     try {
         const user = new User({ userName, email, password, address, role });
         await user.save();

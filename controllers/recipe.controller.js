@@ -69,11 +69,16 @@ exports.getRecipesByPreparationTime = async (req, res, next) => {
 
 exports.addRecipe = async (req, res, next) => {
     try {
+        const userId = req.user.user_id;
+        const user = await User.findOne({ _id: userId });
+        req.body.user = { id: userId, nameUser: user.userName }
+        console.log("qqqqq.....", req.body);
         if (req.user.role === "admin" || req.user.role === "user") {
             const v = recipeValidators.addRec.validate(req.body)
             if (v.error) {
                 return next({ message: v.error.message })
             }
+
             const categories = req.body.categories || [];
             for (const category of categories) {
                 const existingCategory = await Category.findOne({ description: category.description });
