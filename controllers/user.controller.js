@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 const Joi = require('joi')
-const { userValidators, User, generateToken } = require('../models/user.model')
+const { userValidators, User, generateToken } = require('../models/user.model');
 
 exports.signIn = async (req, res, next) => {
     const v = userValidators.signIn.validate(req.body);
@@ -60,3 +60,17 @@ exports.getAllUsers = async (req, res, next) => {
         next(error);
     }
 }
+exports.getUser = async (req, res, next) => {
+    try {
+        const userId = req.user.user_id;
+        const user = await User.findOne({ _id: userId });
+        if (user) {
+            return res.json(user);
+        } else {
+            return res.status(404).json({ message: 'User not found' });
+        }
+    } catch (error) {
+        next(error); // Pass any errors to the error handling middleware
+    }
+};
+

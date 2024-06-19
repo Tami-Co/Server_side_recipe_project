@@ -2,7 +2,6 @@ const bcrypt = require('bcrypt');
 const Joi = require('joi');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-const { signIn } = require('../controllers/user.controller');
 
 const userSchema = new mongoose.Schema({
     userName: { type: String,  minlength: [2, 'name must be at least 2 chars'] },

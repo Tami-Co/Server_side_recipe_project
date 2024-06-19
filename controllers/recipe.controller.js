@@ -1,21 +1,29 @@
 const mongoose = require('mongoose');
 const { User } = require('../models/user.model');
 const { Recipe, recipeValidators } = require('../models/recipe.model');
-const { Category, categoryValidators } = require('../models/category.model');
+const { Category, } = require('../models/category.model');
 
 exports.getAllRecipes = async (req, res, next) => {
     let { search, page, perPage } = req.query;
+console.log("getAllRecipes",req.query);
     search ??= '';
     page ??= 1;
     perPage ??= 12;
 
     console.log("params", search, perPage, page);
     try {
-        const recipes = await Recipe.find({ name: new RegExp(search), isPrivate: false })
-            .skip((page - 1) * perPage)
-            .limit(perPage)
-            .select('-__v')
-        return res.json(recipes);
+        if (page == 'all') {
+            const recipes = await Recipe.find({ isPrivate: false })
+            return res.json(recipes);
+        }
+        else {
+            const recipes = await Recipe.find({ name: new RegExp(search), isPrivate: false })
+                .skip((page - 1) * perPage)
+                .limit(perPage)
+                .select('-__v')
+            return res.json(recipes);
+        }
+
     } catch (error) {
         next(error)
     }
@@ -37,12 +45,13 @@ exports.getRecipeById = (req, res, next) => {
     }
 }
 exports.getRecipesOfUser = async (req, res, next) => {
-    const userId = req.params.idUser;
+    const userId = req.user.user_id;
+
     if (!mongoose.Types.ObjectId.isValid(userId)) {
         next({ message: 'the id of user is not valid' })
     }
     else {
-        if (req.body.role === "admin" || req.body.role === "user") {
+        if (req.user.role === "admin" || req.user.role === "user") {
             try {
                 const recipes = await Recipe.find({ 'user.id': userId });
                 return res.json(recipes);
@@ -51,7 +60,7 @@ exports.getRecipesOfUser = async (req, res, next) => {
             }
         }
         else {
-            next({ message: 'only admin can add recipe' });
+            next({ message: 'only admin can get recipes' });
 
         }
 
@@ -67,18 +76,17 @@ exports.getRecipesByPreparationTime = async (req, res, next) => {
     }
 }
 
+
 exports.addRecipe = async (req, res, next) => {
     try {
         const userId = req.user.user_id;
         const user = await User.findOne({ _id: userId });
         req.body.user = { id: userId, nameUser: user.userName }
-        console.log("qqqqq.....", req.body);
         if (req.user.role === "admin" || req.user.role === "user") {
             const v = recipeValidators.addRec.validate(req.body)
             if (v.error) {
                 return next({ message: v.error.message })
             }
-
             const categories = req.body.categories || [];
             for (const category of categories) {
                 const existingCategory = await Category.findOne({ description: category.description });
@@ -104,6 +112,9 @@ exports.addRecipe = async (req, res, next) => {
 
 exports.updateRecipe = async (req, res, next) => {
     const id = req.params.id;
+    const userId = req.user.user_id;
+    const user = await User.findOne({ _id: userId });
+    req.body.user = { id: userId, nameUser: user.userName }
     if (!mongoose.Types.ObjectId.isValid(id))
         next({ message: 'id is not valid' })
     else {

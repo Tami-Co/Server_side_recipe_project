@@ -64,7 +64,7 @@ module.exports.recipeValidators = {
         preparationTime: Joi.number().required(),
         level: Joi.number().required(),
         dateAdded: Joi.date().required(),
-        layersOfCake: Joi.array().items(
+        layersCake: Joi.array().items(
             Joi.object({
                 description: Joi.string().required(),
                 ingredients: Joi.array().items(Joi.string()).required()
