@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
-    userName: { type: String,  minlength: [2, 'name must be at least 2 chars'] },
+    userName: { type: String, minlength: [2, 'name must be at least 2 chars'] },
     email: { type: String, require: true, unique: true },
-    password: {type: String, require: true},
+    password: { type: String, require: true },
     address: { type: String, require: true },
     role: { type: String, default: 'user', enum: ['admin', 'user'], require: true },
 })
@@ -39,8 +39,8 @@ module.exports.userValidators = {
         email: Joi.string().email().required(),
         password: Joi.string().min(4).max(15).required().pattern(new RegExp('^(?=.*[A-z])(?=.*[0-9])'))
 
-        .error(new Error('Password must be contain at least one lowercase letter, one uppercase letter, one numeric digit'))
-,
+            .error(new Error('Password must be contain at least one lowercase letter, one uppercase letter, one numeric digit'))
+        ,
         address: Joi.string().required(),
         role: Joi.string().required()
     }),

@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/", getAllRecipes);
 
 router.get("/:id", getRecipeById);
-//להוסיף AUTH
+
 router.get("/recipesUser/:idUser", auth, getRecipesOfUser);
 
 router.get("/recipesByTime/:time", getRecipesByPreparationTime);

@@ -5,7 +5,7 @@ const { Category, } = require('../models/category.model');
 
 exports.getAllRecipes = async (req, res, next) => {
     let { search, page, perPage } = req.query;
-console.log("getAllRecipes",req.query);
+    console.log("getAllRecipes", req.query);
     search ??= '';
     page ??= 1;
     perPage ??= 12;

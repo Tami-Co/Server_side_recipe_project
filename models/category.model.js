@@ -1,7 +1,5 @@
-const { string } = require('joi');
 const mongoose = require("mongoose");
-// const { mongooseSequence } = require('mongoose-sequence');
-// mongooseSequence.initalize(mongoose.connection)
+
 const minimalRecipeSchema = new mongoose.Schema({
     id: [{ type: mongoose.Types.ObjectId, ref: 'recipes' }],
     name: { type: String },
