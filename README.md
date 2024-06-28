@@ -28,8 +28,8 @@ Create a `.env` file in the root directory of your project and add the following
 | url | method | description | permissions | parameters | optional parameters | body | headers | returns | status codes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [http://localhost:5000/users/](http://localhost:5000/users) | GET | get all users | administrator  |--- |||||||
-| [http://localhost:5000/users/signin](http://localhost:5000/users/signin) | POST | user sign ip |--- |||||||
-| [http://localhost:5000/users/signup](http://localhost:5000/users/signup) | POST | user sign up | --- |||||||
+| [http://localhost:5000/users/signin](http://localhost:5000/users/signin) | POST | user sign ip |--- |{email,password}	|||||||
+| [http://localhost:5000/users/signup](http://localhost:5000/users/signup) | POST | user sign up | --- |{username,email,password,addres}	||||||
 | [http://localhost:5000/users/:userId](http://localhost:5000/users/:userId)| GET | get user by id  |  administrator /current user | {userId} – קוד משתמש |||||||
 
 ## recipes resource
@@ -40,8 +40,8 @@ Create a `.env` file in the root directory of your project and add the following
 | [http://localhost:5000/recipes/:id](http://localhost:5000/recipes/:id) | GET |get recipe by id |{id} – קוד מתכון| --- |||||||
 | [http://localhost:5000/recipes/recipesUser/:idUser](http://localhost:5000/recipes/recipesUser/:idUser) | GET | get recipes of user - by id of user |administrator /current user |{idUser} – קוד משתמש | --- ||||||| 
 | [http://localhost:5000/recipes/recipesByTime/:time](http://localhost:5000/recipes/recipesByTime/:time) | GET | get recipes by preparation time |{time} –  זמן הכנה| --- |||||||
-| [http://localhost:5000/recipes](http://localhost:5000/recipes) | POST | add new course  |administrator /current user | --- ||||||| --- |||||||
-| [http://localhost:5000/recipes/:id](http://localhost:5000/recipes/:id) | PUT | update existing recipe (by *id*) |administrator /current user |{id} – קוד מתכון| --- ||||||| --- |||||||
+| [http://localhost:5000/recipes](http://localhost:5000/recipes) | POST | add new course  |administrator /current user | ---|{recipe}	|--- ||||||| --- |||||||
+| [http://localhost:5000/recipes/:id](http://localhost:5000/recipes/:id) | PUT | update existing recipe (by *id*) |administrator /current user |{id} – קוד מתכון| --- |{recipe}	|||||| --- |||||||
 | [http://localhost:5000/recipes/:id](http://localhost:5000/recipes/:id) | DELETE | delete existing recipe (by *id*) |administrator /current user |{id} – קוד מתכון| --- ||||||| --- |||||||
 
 ## categories resource
