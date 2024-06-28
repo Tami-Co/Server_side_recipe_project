@@ -27,10 +27,10 @@ Create a `.env` file in the root directory of your project and add the following
 
 | url | method | description | permissions | parameters | optional parameters | body | headers | returns | status codes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [http://localhost:5000/users/](http://localhost:5000/users) | GET | get all users | - |||||||
-| [http://localhost:5000/users/signin](http://localhost:5000/users/signin) | POST | user sign up | - |||||||
-| [http://localhost:5000/users/signup](http://localhost:5000/users/signup) | POST | user sign up | - |||||||
-| [http://localhost:5000/users/:userId](http://localhost:5000/users/:userId)| GET | get user by id  | current user |||||||
+| [http://localhost:5000/users/](http://localhost:5000/users) | GET | get all users | administrator  - |||||||
+| [http://localhost:5000/users/signin](http://localhost:5000/users/signin) | POST | user sign ip | administrator /current user |- |||||||
+| [http://localhost:5000/users/signup](http://localhost:5000/users/signup) | POST | user sign up | administrator /current user | - |||||||
+| [http://localhost:5000/users/:userId](http://localhost:5000/users/:userId)| GET | get user by id  |  administrator /current user | |||||||
 
 ## recipes resource
 
