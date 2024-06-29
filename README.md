@@ -28,29 +28,29 @@ Create a `.env` file in the root directory of your project and add the following
 | url | method | description | permissions | parameters | optional parameters | body | headers | returns | status codes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [http://localhost:5000/users/](http://localhost:5000/users) | GET | get all users | administrator  |--- |---|---|||||||
-| [http://localhost:5000/users/signin](http://localhost:5000/users/signin) | POST | user sign ip |--- |{email,password}	|||||||
-| [http://localhost:5000/users/signup](http://localhost:5000/users/signup) | POST | user sign up | --- |{username,email,password,addres}	||||||
+| [http://localhost:5000/users/signin](http://localhost:5000/users/signin) | POST | user sign ip |--- |--- |---|{email,password}	|||||||
+| [http://localhost:5000/users/signup](http://localhost:5000/users/signup) | POST | user sign up | --- |--- |---|{username,email,password,addres}	||||||
 | [http://localhost:5000/users/:userId](http://localhost:5000/users/:userId)| GET | get user by id  |  administrator /current user | {userId} – קוד משתמש |||||||
 
 ## recipes resource
 
 | url | method | description | permissions | parameters | optional parameters | body | headers | returns | status codes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [http://localhost:5000/recipes](http://localhost:5000/recipes) | GET | get all recipes | --- |perPage - מס' מתכונים לעמוד page - מס' עמוד search - חיפוש לפי שם מתכון|||||||
-| [http://localhost:5000/recipes/:id](http://localhost:5000/recipes/:id) | GET |get recipe by id |{id} – קוד מתכון| --- |||||||
-| [http://localhost:5000/recipes/recipesUser/:idUser](http://localhost:5000/recipes/recipesUser/:idUser) | GET | get recipes of user - by id of user |administrator /current user |{idUser} – קוד משתמש | --- ||||||| 
-| [http://localhost:5000/recipes/recipesByTime/:time](http://localhost:5000/recipes/recipesByTime/:time) | GET | get recipes by preparation time |{time} –  זמן הכנה| --- |||||||
-| [http://localhost:5000/recipes](http://localhost:5000/recipes) | POST | add new course  |administrator /current user | ---|{recipe}	|--- ||||||| --- |||||||
+| [http://localhost:5000/recipes](http://localhost:5000/recipes) | GET | get all recipes | --- |---|perPage - מס' מתכונים לעמוד page - מס' עמוד search - חיפוש לפי שם מתכון|---|||||||
+| [http://localhost:5000/recipes/:id](http://localhost:5000/recipes/:id) | GET |get recipe by id |---|{id} – קוד מתכון| --- |---|||||||
+| [http://localhost:5000/recipes/recipesUser/:idUser](http://localhost:5000/recipes/recipesUser/:idUser) | GET | get recipes of user - by id of user |administrator /current user |{idUser} – קוד משתמש | --- |---||||||| 
+| [http://localhost:5000/recipes/recipesByTime/:time](http://localhost:5000/recipes/recipesByTime/:time) | GET | get recipes by preparation time |---|{time} –  זמן הכנה| --- |---|||||||
+| [http://localhost:5000/recipes](http://localhost:5000/recipes) | POST | add new course  |administrator /current user | ---|---|{ new recipe}|	  |||||||
 | [http://localhost:5000/recipes/:id](http://localhost:5000/recipes/:id) | PUT | update existing recipe (by *id*) |administrator /current user |{id} – קוד מתכון| --- |{recipe}	|||||| --- |||||||
-| [http://localhost:5000/recipes/:id](http://localhost:5000/recipes/:id) | DELETE | delete existing recipe (by *id*) |administrator /current user |{id} – קוד מתכון| --- ||||||| --- |||||||
+| [http://localhost:5000/recipes/:id](http://localhost:5000/recipes/:id) | DELETE | delete existing recipe (by *id*) |administrator /current user |{id} – קוד מתכון| --- |---||||||||
 
 ## categories resource
 
 | url | method | description | permissions | parameters | optional parameters | body | headers | returns | status codes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [http://localhost:5000/categories](http://localhost:5000/categories) | GET | get all categories | --- |||||||
-| [http://localhost:5000/categories/withRecipes](http://localhost:5000/users/withRecipes) | GET | get all categories with their recipes | --- |||||||
-| [http://localhost:5000/categories/:name](http://localhost:5000/users/categories/:name) | GET | get category with her recipes by name of category |{name} –  שם קטגוריה| --- |||||||
+| [http://localhost:5000/categories](http://localhost:5000/categories) | GET | get all categories | --- |--- |---|---||||||
+| [http://localhost:5000/categories/withRecipes](http://localhost:5000/users/withRecipes) | GET | get all categories with their recipes | ------ |---|--- |||||||
+| [http://localhost:5000/categories/:name](http://localhost:5000/users/categories/:name) | GET | get category with her recipes by name of category |---|{name} –  שם קטגוריה| --- |---|||||||
 
 
 
