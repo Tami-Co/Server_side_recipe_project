@@ -52,7 +52,6 @@ Create a `.env` file in the root directory of your project and add the following
 | [http://localhost:5000/categories/:name](http://localhost:5000/users/categories/:name) | GET | get category with her recipes by name of category |---|{name} –  שם קטגוריה| --- |---|---|category by name with recipes |200||||||
 
 
-```
 
 
 
