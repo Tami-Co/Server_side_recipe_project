@@ -27,8 +27,8 @@ Create a `.env` file in the root directory of your project and add the following
 | url | method | description | permissions | parameters | optional parameters | body | headers | returns | status codes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [http://localhost:5000/users/](http://localhost:5000/users) | GET | get all users | administrator  |--- |---|---|token|all users| 200||||||
-| [http://localhost:5000/users/signin](http://localhost:5000/users/signin) | POST | user sign ip |--- |--- |---|{email,password}	| User+token|204||||||||
-| [http://localhost:5000/users/signup](http://localhost:5000/users/signup) | POST | user sign up | --- |--- |---|{username,email,password,addres}	| User+token|204||||||
+| [http://localhost:5000/users/signin](http://localhost:5000/users/signin) | POST | user sign ip |--- |--- |---|{email,password}	|---| User+token|204||||||
+| [http://localhost:5000/users/signup](http://localhost:5000/users/signup) | POST | user sign up | --- |--- |---|{username,email,password,addres}	|---| User+token|204||||||
 | [http://localhost:5000/users/:userId](http://localhost:5000/users/:userId)| GET | get user by id  |  administrator /current user | {userId} – קוד משתמש |---|---|token|User|200||||
 
 ## recipes resource
@@ -48,8 +48,8 @@ Create a `.env` file in the root directory of your project and add the following
 | url | method | description | permissions | parameters | optional parameters | body | headers | returns | status codes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [http://localhost:5000/categories](http://localhost:5000/categories) | GET | get all categories | --- |--- |---|---|---||all category|200|||||
-| [http://localhost:5000/categories/withRecipes](http://localhost:5000/users/withRecipes) | GET | get all categories with their recipes | --- |---|--- |---|all category with recipes |200||||||
-| [http://localhost:5000/categories/:name](http://localhost:5000/users/categories/:name) | GET | get category with her recipes by name of category |---|{name} –  שם קטגוריה| --- |---|---||category by name with recipes |200||||||
+| [http://localhost:5000/categories/withRecipes](http://localhost:5000/users/withRecipes) | GET | get all categories with their recipes | --- |---|--- |---|---|all category with recipes |200||||||
+| [http://localhost:5000/categories/:name](http://localhost:5000/users/categories/:name) | GET | get category with her recipes by name of category |---|{name} –  שם קטגוריה| --- |---|---|---|---|category by name with recipes |200||||||
 
 
 
