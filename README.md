@@ -11,7 +11,6 @@
 
 Create a `.env` file in the root directory of your project and add the following environment variables:
 
-| dotenv
 | Variable     | Description                                                |
 | ------------ | ---------------------------------------------------------- |
 | DB_URL       | MongoDB connection URL for your database.                   |
