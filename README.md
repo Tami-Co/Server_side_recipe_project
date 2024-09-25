@@ -1,24 +1,57 @@
-# server Recipe
+# Recipe Sharing Website - Server (Backend)
+
+This repository contains the backend for the Recipe Sharing Website. The backend is built with Node.js, Express.js, and MongoDB Atlas. It handles user authentication, authorization, and recipe management.
+
+## Features
+
+- Users can create, and delete recipes.
+- Recipes are categorized into multiple categories.
+- Authentication with JWT.
+- Password hashing with bcryptjs.
+- Database: MongoDB Atlas with Mongoose for data modeling.
+
+## Technologies Used
+
+- **Node.js**: JavaScript runtime for building the server-side of the application.
+- **Express.js**: Web framework for routing and handling requests.
+- **MongoDB Atlas**: Cloud database for storing recipes and user data.
+- **Mongoose**: ODM (Object Data Modeling) for interacting with MongoDB.
+- **JWT**: JSON Web Token for user authentication and authorization.
+- **bcryptjs**: Password hashing for securing user accounts.
 
 ## Installation
 
-### Before starting the server, make sure to install the necessary Node.js modules:
+### Prerequisites
 
-### npm install
+- Node.js (v14+)
+- npm (Node Package Manager)
+- MongoDB Atlas account
 
+### Steps
 
-## Environment Variables
-
-Create a `.env` file in the root directory of your project and add the following environment variables:
-
-| Variable     | Description                                                |
-| ------------ | ---------------------------------------------------------- |
-| DB_URL       | MongoDB connection URL for your database.                   |
-| PORT         | Port number on which the server will run.                  |
-| BCRYPT_SALT  | Number of salt rounds for bcrypt hashing.                   |
-| JWT_SECRET   | Secret key used for signing JWT tokens.                    |
-
-
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Tami-Co/Server_side_recipe_project.git
+2. **Install server dependencies**:
+   ```bash
+   cd server-side
+   npm install
+3. **Install client dependencies**:
+   ```bash
+   cd client-side
+   npm install
+4. **Environment variables:** Create a .env file in the server-side folder with the following content:
+   ```bash
+   PORT=<your-port>
+   DB_URL=mongodb+srv://noaRe:nR6787661@mycluster.emynhxf.mongodb.net/recipe_siteDB?retryWrites=true&w=majority&appName=MyCluster
+   BCRYPT_SALT=<your-bcrypt-salt>
+   JWT_SECRET=<your-secret-key>
+5. **Run the backend (server)**:
+   ```bash
+   npm run dev
+5. **Run the frontend  (client)**:
+   ```bash
+   npm start
 
 ## Endpoints
 
