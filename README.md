@@ -39,9 +39,10 @@ This repository contains the backend for the Recipe Sharing Website. The backend
 3. **Environment variables:** Create a .env file in the server-side folder with the following content:
    ```bash
    PORT=<your-port>
-   DB_URL=mongodb+srv://noaRe:nR6787661@mycluster.emynhxf.mongodb.net/recipe_siteDB?retryWrites=true&w=majority&appName=MyCluster
+   DB_URL=<your-mongodb-url>
    BCRYPT_SALT=<your-bcrypt-salt>
    JWT_SECRET=<your-secret-key>
+
 4. **Run the backend (server)**:
    ```bash
    npm run dev
