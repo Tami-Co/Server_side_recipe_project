@@ -36,22 +36,15 @@ This repository contains the backend for the Recipe Sharing Website. The backend
    ```bash
    cd server-side
    npm install
-3. **Install client dependencies**:
-   ```bash
-   cd client-side
-   npm install
-4. **Environment variables:** Create a .env file in the server-side folder with the following content:
+3. **Environment variables:** Create a .env file in the server-side folder with the following content:
    ```bash
    PORT=<your-port>
    DB_URL=mongodb+srv://noaRe:nR6787661@mycluster.emynhxf.mongodb.net/recipe_siteDB?retryWrites=true&w=majority&appName=MyCluster
    BCRYPT_SALT=<your-bcrypt-salt>
    JWT_SECRET=<your-secret-key>
-5. **Run the backend (server)**:
+4. **Run the backend (server)**:
    ```bash
    npm run dev
-5. **Run the frontend  (client)**:
-   ```bash
-   npm start
 
 ## Endpoints
 
