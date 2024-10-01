@@ -19,6 +19,10 @@ This repository contains the backend for the Recipe Sharing Website. The backend
 - **JWT**: JSON Web Token for user authentication and authorization.
 - **bcryptjs**: Password hashing for securing user accounts.
 
+ ## Frontend
+
+The fronend for this project is available [here]([https://recipe-site-server.onrender.com/](https://recipes-site-5gwe.onrender.com/)). 
+
 ## Installation
 
 ### Prerequisites
